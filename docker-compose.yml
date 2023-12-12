@@ -3,7 +3,7 @@ version: "3"
 services:
   service:
     # Run a specific tag of a service image with the command: `TAG=<new-tag> docker-compose up`
-    image: 'your-image-name:latest'
+    image: 'kindney-stone-prediction:latest'
     ports:
       - 5000:5000
     volumes:
@@ -13,5 +13,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: flask run --host=0.0.0.0 --port=5000
+    command: flask run --host=0.0.0.0 --port=5000 --reload
   

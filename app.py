@@ -12,6 +12,15 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/test')
+def home_test():
+    return "Hello World"
+
+@app.route('/test3')
+def home_test2():
+    return "Hello World2"
+
+
 @app.route('/', methods=['post'])
 def predict():
     '''
@@ -29,7 +38,8 @@ def predict():
     else:
         predictions = "Don't Worry you don't have stones😊"
 
-    return render_template('index.html', prediction_text=predictions)
+    return render_template('predict.html', prediction_text=predictions)
+
 
 
 if __name__ == "__main__":
