@@ -12,7 +12,7 @@ def home():
     log_level = logging.INFO
     logger = logging.getLogger(__name__)
     logger.setLevel(log_level)
-    logger.error("The Application is deployed - %s",datetime.now())
+    logger.error("The Application is deployed - %s seconds",datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[-2:])
     return render_template('index.html')
 
 
