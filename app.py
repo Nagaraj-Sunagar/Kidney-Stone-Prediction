@@ -1,14 +1,18 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-
-
+import logging
+from datetime import datetime
 app = Flask(__name__, template_folder='templets')
 model = pickle.load(open('model.pkl', 'rb'))
 
 
 @app.route('/')
 def home():
+    log_level = logging.INFO
+    logger = logging.getLogger(__name__)
+    logger.setLevel(log_level)
+    logger.error("The Application is deployed - %s",datetime.now())
     return render_template('index.html')
 
 
